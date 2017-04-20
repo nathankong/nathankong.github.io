@@ -2154,7 +2154,7 @@
 
 			#main > section.dark {
 				color: #666;
-				color: rgba(255, 255, 255, 0.75);
+	/*			color: rgba(255, 255, 255, 0.75);*/
 			}
 
 				#main > section.dark h2, #main > section.dark h3, #main > section.dark h4, #main > section.dark h5, #main > section.dark h6 {
