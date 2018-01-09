@@ -9,16 +9,19 @@
 		<title>Nathan Kong</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
-		<script type="text/javascript" src="local_js.js"></script>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<script type="text/javascript" src="../local_js.js"></script>
+
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+			});
+		</script>
+		<script type="text/javascript" src="../MathJax.js?config=TeX-AMS_HTML-full"></script>
 
         <script>
             $(function(){
-                $("#navbar").load("navbar.html");
+                $("#navbar").load("../navbar.html");
             });
         </script>
 	</head>
@@ -32,15 +35,15 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<span class="image avatar48"><img src="images/bg.jpg" alt="" /></span>
+							<span class="image avatar48"><img src="../images/bg.jpg" alt="" /></span>
 							<h1 id="title">Nathan Kong</h1>
 							<p>Electrical and Computer Engineer<br>Aspiring Computational Neuroscientist</p>
 						</div>
 
 					<!-- Nav -->
-						<nav id="nav">
+				<!--		<nav id="nav">
 							<div id="navbar"> </div>
-						</nav>
+						</nav>-->
 
 				</div>
 
@@ -58,23 +61,45 @@
 			</div>
 
 
-				<!-- Main -->
-				<div id="main">
+				<!-- Post -->
+				<div id="post">
 
 
-				<!-- About Me -->
 					<section id="blog" class="three">
 						<div class="container" style="height:100%">
 
+						<!-- MODIFY TITLE -->
 						<header>
-							<h2>Welcome To My Blog!</h2>
+							<h2>Expected Value of Indicator Function</h2>
 						</header>
 
-						<a href="blog/expectation_indicator_func.html">Indicator Function. -- January 9, 2018</a>
-						<br>
-						<a href="blog/code_snippets.html">Writing Some Code. -- April 20, 2017</a>
-						<br>
-						<a href="blog/first_post.html">First Post! -- April 20, 2017</a>
+						The indicator function is defined as follows: $$\mathbb{I} = $$
+
+						<!-- MODIFY THESE LINKS -->
+						<a href="../blog.html">Archives</a><br>
+						<a href="code_snippets.html">Previous</a><br>
+						<a href="../blog.html" align="right">Next</a>
+						<p></p>
+
+						<div id="disqus_thread"></div>
+						<script>
+
+						var disqus_config = function () {
+							this.page.url = 'http://nathankong.github.io/blog/first_post.html'; // EDIT THIS FOR EACH POST
+							this.page.identifier = first_post;  // EDIT THIS FOR EACH POST
+						};
+
+						(function() { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+							s.src = 'https://nathankong-github-io.disqus.com/embed.js';
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+						})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 						</div>
 					</section>
@@ -103,5 +128,6 @@
 
 	</body>
 </html>
+
 
 
