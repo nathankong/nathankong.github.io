@@ -18,6 +18,7 @@
 			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 		</script>
 
+
         <script>
             $(function(){
                 $("#navbar").load("../navbar.html");
@@ -69,36 +70,29 @@
 
 						<!-- MODIFY TITLE -->
 						<header>
-							<h2>Expected Value of the Indicator Function</h2>
+							<h2>Expectation Value Using the Cumulative Distribution Function</h2>
 						</header>
-
-						Suppose that we have a sample space $\Omega$ and an event, $A \subseteq \Omega$.  The indicator function, which is a random variable, is defined as follows:
+						We assume that the random variable $X$ is non-negative. We want to show that:
+						$\mathbb{E}[x] = \displaystyle\int_0^\infty \left[1-F(z)\right] \operatorname{d}\!z$
 						<br>
-						$\mathbb{1}_A(\omega) = \begin{cases}1 & \text{if } \omega \in A \\
-															0 & \text{if } \omega \notin A
-												\end{cases}$
+						Proof:
 						<br>
-						where $\omega$ is a possible outcome in $\Omega$. The support (or the possible values that a random variable can take) of this indicator random variable is $\{0, 1\}$.
-
-						The probability mass function is as follows:
+						$\begin{align}
+						\mathbb{E}[x] &= \displaystyle\int_0^\infty x f(x) \operatorname{d}\!x \\
+						&= \displaystyle\int_0^\infty \int_0^x \operatorname{d}\!z \, f(x) \operatorname{d}\!x \\
+						&= \displaystyle\int_0^\infty \left[\int_0^\infty \mathbb{1}(z < x) f(x) \operatorname{d}\!z \right]\operatorname{d}\!x \\
+						&= \displaystyle\int_0^\infty \left[\int_0^\infty \mathbb{1}(z < x) f(x) \operatorname{d}\!x \right]\operatorname{d}\!z \,\,\,\,\text{(Fubini's theorem)}\\
+						&= \displaystyle\int_0^\infty \left[\int_z^\infty f(x) \operatorname{d}\!x \right]\operatorname{d}\!z\\
+						&= \displaystyle\int_0^\infty \left[1-F(z)\right] \operatorname{d}\!z
+						\end{align}$
 						<br>
-						$p_{\mathbb{1}_A}(x) = \begin{cases} P(A) & \text{if } x = 1 \\
-													1-P(A) & \text{if } x = 0 \\
-													0	& \text{otherwise}
-										\end{cases}$
-						<br>
-						Then, the expected value of the indicator random variable is:
-						<br>
-						$\mathbb{E}[\mathbb{1}_A] = \displaystyle\sum_{x \in \{0,1\}}x \cdot p_{\mathbb{1}_A}(x) = P(A)$
-						<br>
-						As a side, remember that a real valued random variable is a function.  It maps the sample space, $\Omega$, into the real numbers, $\mathbb{R}$.	Mathematically, it is $X:\Omega \rightarrow \mathbb{R}$, where $X$ is a real valued random variable.
-
+						where $\mathbb{1}(\cdot)$ is the indicator function.
 						<p></p>
 
 						<!-- MODIFY THESE LINKS -->
 						<a href="../blog.html">Archives</a><br>
-						<a href="code_snippets.html">Previous</a><br>
-						<a href="expectation_cdf.html" align="right">Next</a>
+						<a href="expectation_indicator_func.html">Previous</a><br>
+						<a href="../blog.html" align="right">Next</a>
 						<p></p>
 
 						<div id="disqus_thread"></div>
