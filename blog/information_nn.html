@@ -71,9 +71,9 @@
 						</header>
 
 In the past decade, high throughput training of deep learning models has bolstered their success in completing difficult tasks. Unfortunately, a theoretical understanding of why these models are so successful is missing. Some work investigating why deep learning models generalize so well utilize concepts from information theory and analyze the information gain between the inputs (and outputs) and the internal representations. A problem that arose in this kind of approach was related to how mutual information was computed in deterministic neural networks. Goldfeld et al. (2018) developed a new method for estimating mutual information by analyzing information theoretic quantities using noisy neural networks and observed that the reduction in mutual information between the internal representation and the inputs (compression) is associated with the clustering of internal representations.
-<br>
+<p></p>
 In this work, we reproduce some simple empirical observations in Goldfeld et al. (2018). Furthermore, we conduct some experiments related to modifying the data distribution, as previous work studying information flow in neural networks used a uniform input data distribution. We observe that for a single Gaussian data distribution, using a non-saturating non-linearity in the hidden layer such as LeakyReLU, we do not observe a clustering of the internal representations.
-<br>
+<p></p>
 To see the project report, go <a href="../documents/information_compression.pdf" align="right">here</a>!
 <p></p>
 
