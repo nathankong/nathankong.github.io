@@ -9,15 +9,12 @@
 		<title>Nathan Kong</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
 		<script type="text/javascript" src="../local_js.js"></script>
-
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-		</script>
-
 
         <script>
             $(function(){
@@ -70,29 +67,19 @@
 
 						<!-- MODIFY TITLE -->
 						<header>
-							<h2>Expectation Value Using the Cumulative Distribution Function</h2>
+							<h2>Information Compression in Simple Neural Networks!</h2>
 						</header>
-						We assume that the random variable $X$ is non-negative. We want to show that:
-						$\mathbb{E}[x] = \displaystyle\int_0^\infty \left[1-F(z)\right] \operatorname{d}\!z$
-						<br>
-						Proof:
-						<br>
-						$\begin{align}
-						\mathbb{E}[x] &= \displaystyle\int_0^\infty x f(x) \operatorname{d}\!x \\
-						&= \displaystyle\int_0^\infty \int_0^x \operatorname{d}\!z \, f(x) \operatorname{d}\!x \\
-						&= \displaystyle\int_0^\infty \left[\int_0^\infty \mathbb{1}(z < x) f(x) \operatorname{d}\!z \right]\operatorname{d}\!x \\
-						&= \displaystyle\int_0^\infty \left[\int_0^\infty \mathbb{1}(z < x) f(x) \operatorname{d}\!x \right]\operatorname{d}\!z \,\,\,\,\text{(Fubini's theorem)}\\
-						&= \displaystyle\int_0^\infty \left[\int_z^\infty f(x) \operatorname{d}\!x \right]\operatorname{d}\!z\\
-						&= \displaystyle\int_0^\infty \left[1-F(z)\right] \operatorname{d}\!z
-						\end{align}$
-						<br>
-						where $\mathbb{1}(\cdot)$ is the indicator function.
-						<p></p>
+
+In the past decade, high throughput training of deep learning models has bolstered their success in completing difficult tasks. Unfortunately, a theoretical understanding of why these models are so successful is missing. Some work investigating why deep learning models generalize so well utilize concepts from information theory and analyze the information gain between the inputs (and outputs) and the internal representations. A problem that arose in this kind of approach was related to how mutual information was computed in deterministic neural networks. Goldfeld et al. (2018) developed a new method for estimating mutual information by analyzing information theoretic quantities using noisy neural networks and observed that the reduction in mutual information between the internal representation and the inputs (compression) is associated with the clustering of internal representations.
+
+In this work, we reproduce some simple empirical observations in Goldfeld et al. (2018). Furthermore, we conduct some experiments related to modifying the data distribution, as previous work studying information flow in neural networks used a uniform input data distribution. We observe that for a single Gaussian data distribution, using a non-saturating non-linearity in the hidden layer such as LeakyReLU, we do not observe a clustering of the internal representations.
+
+To see the project report, go <a href="../documents/information_compression.pdf" align="right">here</a>!
 
 						<!-- MODIFY THESE LINKS -->
 						<a href="../blog.html">Archives</a><br>
-						<a href="expectation_indicator_func.html">Previous</a><br>
-						<a href="information_nn.html" align="right">Next</a>
+						<a href="../expectation_cdf.html">Previous</a><br>
+						<a href="../blog.html" align="right">Next</a>
 						<p></p>
 
 						<div id="disqus_thread"></div>
